@@ -1,0 +1,25 @@
+
+const initialState = {
+  contacts: ["Kabir Alkasim,Bello Alkasim"]
+  
+  function reducer(state=initialState,action){
+    switch (action.type){
+      case 'ADD-PERSON':
+        return {...state,
+        contacts:[...state.contacts,
+        action.data]}
+        default:
+          return state;
+    }
+  }
+
+const store = createStore(reducer);
+ReactDOM.render(
+<provider state = {store}>
+<AddPersonForm/>
+<peopleList/>
+</provider>,
+
+ReactDOM.render(
+document.getElementById('root')
+);
